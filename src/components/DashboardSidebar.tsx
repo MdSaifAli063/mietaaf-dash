@@ -1,6 +1,7 @@
 import { Home, FolderOpen, Package, Settings, BarChart3 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { LogoutButton } from "./LogoutButton";
 
 const navItems = [
   { title: "Dashboard", icon: Home, path: "/" },
@@ -12,7 +13,7 @@ const navItems = [
 
 export function DashboardSidebar() {
   return (
-    <aside className="w-64 min-h-screen bg-sidebar border-r border-sidebar-border">
+    <aside className="w-64 min-h-screen bg-sidebar border-r border-sidebar-border flex flex-col">
       <div className="p-6 border-b border-sidebar-border">
         <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
           Mietaaf
@@ -20,7 +21,7 @@ export function DashboardSidebar() {
         <p className="text-sm text-sidebar-foreground/60 mt-1">Dashboard</p>
       </div>
       
-      <nav className="p-4 space-y-1">
+      <nav className="p-4 space-y-1 flex-1">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
@@ -39,6 +40,10 @@ export function DashboardSidebar() {
           </NavLink>
         ))}
       </nav>
+
+      <div className="p-4 border-t border-sidebar-border">
+        <LogoutButton />
+      </div>
     </aside>
   );
 }
