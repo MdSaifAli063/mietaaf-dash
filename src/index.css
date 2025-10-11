@@ -19,6 +19,8 @@ All colors MUST be HSL.
 
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
+    --primary-light: 262 83% 68%;
+    --primary-dark: 262 83% 48%;
 
     --secondary: 240 5% 96%;
     --secondary-foreground: 240 10% 10%;
@@ -31,6 +33,12 @@ All colors MUST be HSL.
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
     --border: 240 6% 90%;
     --input: 240 6% 90%;
@@ -48,10 +56,16 @@ All colors MUST be HSL.
     --sidebar-ring: 262 83% 58%;
 
     --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(252 83% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 20% 99%), hsl(262 83% 98%));
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 20% 99%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 60%));
+    --shadow-sm: 0 1px 2px 0 hsl(240 6% 90% / 0.05);
     --shadow-card: 0 1px 3px 0 hsl(240 6% 90% / 0.1), 0 1px 2px -1px hsl(240 6% 90% / 0.1);
     --shadow-elevated: 0 10px 15px -3px hsl(240 6% 90% / 0.1), 0 4px 6px -4px hsl(240 6% 90% / 0.1);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
