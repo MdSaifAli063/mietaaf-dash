@@ -20,28 +20,34 @@ export function ProductCard({
   onDelete 
 }: ProductCardProps) {
   return (
-    <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <div className="aspect-square overflow-hidden bg-muted">
+    <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-primary/10 hover:border-primary/30 animate-fade-in">
+      <div className="aspect-square overflow-hidden bg-gradient-to-br from-muted to-accent/10 relative">
         <img 
-          src={image} 
+          src={image || "/placeholder.svg"} 
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          onError={(e) => {
+            e.currentTarget.src = "/placeholder.svg";
+          }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-1 line-clamp-1">{name}</h3>
+      <CardContent className="p-5 space-y-2">
+        <h3 className="font-bold text-lg mb-1 line-clamp-1 group-hover:text-primary transition-colors">{name}</h3>
         {description && (
           <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{description}</p>
         )}
-        <p className="text-xl font-bold text-primary">
-          ${price?.toFixed(2) || "0.00"}
-        </p>
+        <div className="flex items-baseline gap-2">
+          <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            ${price?.toFixed(2) || "0.00"}
+          </p>
+        </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 gap-2">
+      <CardFooter className="p-4 pt-0 gap-2 bg-accent/5">
         <Button 
           variant="outline" 
           size="sm" 
-          className="flex-1 gap-2"
+          className="flex-1 gap-2 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
           onClick={onEdit}
         >
           <Edit className="h-4 w-4" />
@@ -50,7 +56,7 @@ export function ProductCard({
         <Button 
           variant="destructive" 
           size="sm" 
-          className="flex-1 gap-2"
+          className="flex-1 gap-2 hover:shadow-md transition-all"
           onClick={onDelete}
         >
           <Trash2 className="h-4 w-4" />

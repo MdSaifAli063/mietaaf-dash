@@ -12,25 +12,31 @@ interface StatsCardProps {
 
 export function StatsCard({ title, value, change, icon: Icon, trend }: StatsCardProps) {
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-primary/10 hover:border-primary/30 animate-fade-in bg-gradient-to-br from-card to-accent/5">
       <CardContent className="p-6">
         <div className="flex items-start justify-between">
-          <div className="space-y-1">
-            <p className="text-sm font-medium text-muted-foreground">{title}</p>
-            <p className="text-3xl font-bold">{value}</p>
+          <div className="space-y-2 flex-1">
+            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">{title}</p>
+            <p className="text-4xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">{value}</p>
             {change && (
               <p
                 className={cn(
-                  "text-sm font-medium",
-                  trend === "up" ? "text-green-600" : "text-red-600"
+                  "text-sm font-bold flex items-center gap-1",
+                  trend === "up" ? "text-success" : "text-destructive"
                 )}
               >
+                <span className={cn(
+                  "inline-block",
+                  trend === "up" ? "animate-bounce" : ""
+                )}>
+                  {trend === "up" ? "↑" : "↓"}
+                </span>
                 {change}
               </p>
             )}
           </div>
-          <div className="p-3 rounded-lg bg-accent">
-            <Icon className="h-6 w-6 text-accent-foreground" />
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/20 animate-pulse-glow">
+            <Icon className="h-7 w-7 text-white" />
           </div>
         </div>
       </CardContent>

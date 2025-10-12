@@ -41,10 +41,14 @@ export function useCollections() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
-      toast.success("Collection created successfully!");
+      toast.success("Collection created successfully!", {
+        description: "Your collection has been added.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to create collection");
+      toast.error("Failed to create collection", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 
@@ -62,10 +66,14 @@ export function useCollections() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
-      toast.success("Collection updated successfully!");
+      toast.success("Collection updated successfully!", {
+        description: "Your changes have been saved.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to update collection");
+      toast.error("Failed to update collection", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 
@@ -80,10 +88,14 @@ export function useCollections() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["collections"] });
-      toast.success("Collection deleted successfully!");
+      toast.success("Collection deleted successfully!", {
+        description: "The collection has been removed.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to delete collection");
+      toast.error("Failed to delete collection", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 

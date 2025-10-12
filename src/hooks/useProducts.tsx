@@ -42,10 +42,14 @@ export function useProducts() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      toast.success("Product created successfully!");
+      toast.success("Product created successfully!", {
+        description: "Your product has been added to the catalog.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to create product");
+      toast.error("Failed to create product", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 
@@ -63,10 +67,14 @@ export function useProducts() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      toast.success("Product updated successfully!");
+      toast.success("Product updated successfully!", {
+        description: "Your changes have been saved.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to update product");
+      toast.error("Failed to update product", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 
@@ -81,10 +89,14 @@ export function useProducts() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
-      toast.success("Product deleted successfully!");
+      toast.success("Product deleted successfully!", {
+        description: "The product has been removed from your catalog.",
+      });
     },
     onError: (error: any) => {
-      toast.error(error.message || "Failed to delete product");
+      toast.error("Failed to delete product", {
+        description: error.message || "Please try again later.",
+      });
     },
   });
 

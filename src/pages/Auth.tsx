@@ -53,16 +53,16 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <div className="mx-auto mb-4">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
-              Mietaaf
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/20 p-4">
+      <Card className="w-full max-w-md shadow-2xl border-primary/20 animate-fade-in">
+        <CardHeader className="text-center space-y-2">
+          <div className="mx-auto mb-4 p-4 rounded-full bg-gradient-to-br from-primary to-accent w-20 h-20 flex items-center justify-center shadow-glow animate-float">
+            <h1 className="text-2xl font-bold text-white">
+              M
             </h1>
           </div>
-          <CardTitle>{isLogin ? "Welcome Back" : "Create Account"}</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl">{isLogin ? "Welcome Back" : "Create Account"}</CardTitle>
+          <CardDescription className="text-base">
             {isLogin
               ? "Sign in to manage your e-commerce dashboard"
               : "Sign up to start managing your collections"}
@@ -109,15 +109,25 @@ export default function Auth() {
               />
             </div>
 
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Loading..." : isLogin ? "Sign In" : "Sign Up"}
+            <Button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all shadow-md hover:shadow-glow" 
+              disabled={loading}
+              size="lg"
+            >
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Processing...
+                </span>
+              ) : isLogin ? "Sign In" : "Sign Up"}
             </Button>
 
-            <div className="text-center text-sm">
+            <div className="text-center text-sm pt-2">
               <button
                 type="button"
                 onClick={() => setIsLogin(!isLogin)}
-                className="text-primary hover:underline"
+                className="text-primary hover:text-accent transition-colors font-medium"
               >
                 {isLogin
                   ? "Don't have an account? Sign up"
