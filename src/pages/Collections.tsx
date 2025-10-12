@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Plus } from "lucide-react";
 import { DashboardHeader } from "@/components/DashboardHeader";
 import { CollectionCard } from "@/components/CollectionCard";
@@ -19,6 +19,7 @@ export default function Collections() {
   const { collections, isLoading, createCollection, updateCollection, deleteCollection } = useCollections();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -53,9 +54,21 @@ export default function Collections() {
     setDialogOpen(true);
   };
 
+  const filteredCollections = useMemo(() => {
+    if (!collections) return [];
+    if (!searchQuery.trim()) return collections;
+    
+    const query = searchQuery.toLowerCase();
+    return collections.filter(
+      (collection) =>
+        collection.name.toLowerCase().includes(query) ||
+        collection.description?.toLowerCase().includes(query)
+    );
+  }, [collections, searchQuery]);
+
   return (
     <div className="flex-1">
-      <DashboardHeader />
+      <DashboardHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       
       <main className="p-8 space-y-8">
         <div className="flex items-center justify-between">
@@ -131,9 +144,9 @@ export default function Collections() {
               <div key={i} className="h-64 bg-muted animate-pulse rounded-lg" />
             ))}
           </div>
-        ) : (
+        ) : filteredCollections.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {collections?.map((collection) => (
+            {filteredCollections.map((collection) => (
               <CollectionCard
                 key={collection.id}
                 name={collection.name}
@@ -143,6 +156,12 @@ export default function Collections() {
                 onDelete={() => deleteCollection(collection.id)}
               />
             ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              {searchQuery ? "No collections found matching your search." : "No collections yet. Create your first one!"}
+            </p>
           </div>
         )}
       </main>

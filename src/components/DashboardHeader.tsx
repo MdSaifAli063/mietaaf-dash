@@ -20,7 +20,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-export function DashboardHeader() {
+interface DashboardHeaderProps {
+  searchQuery?: string;
+  onSearchChange?: (query: string) => void;
+}
+
+export function DashboardHeader({ searchQuery = "", onSearchChange }: DashboardHeaderProps = {}) {
   const navigate = useNavigate();
   const [profile, setProfile] = useState<{ email: string; full_name: string } | null>(null);
   const [notifications] = useState([
@@ -41,7 +46,7 @@ export function DashboardHeader() {
           .from("profiles")
           .select("*")
           .eq("id", user.id)
-          .single();
+          .maybeSingle();
 
         if (profileData) {
           setProfile({
@@ -84,6 +89,8 @@ export function DashboardHeader() {
           <Input
             placeholder="Search collections, products..."
             className="pl-10 bg-background"
+            value={searchQuery}
+            onChange={(e) => onSearchChange?.(e.target.value)}
           />
         </div>
       </div>

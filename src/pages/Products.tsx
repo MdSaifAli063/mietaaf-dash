@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Plus } from "lucide-react";
 import { DashboardHeader } from "@/components/DashboardHeader";
 import { ProductCard } from "@/components/ProductCard";
@@ -28,6 +28,7 @@ export default function Products() {
   const { collections } = useCollections();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -64,9 +65,21 @@ export default function Products() {
     setDialogOpen(true);
   };
 
+  const filteredProducts = useMemo(() => {
+    if (!products) return [];
+    if (!searchQuery.trim()) return products;
+    
+    const query = searchQuery.toLowerCase();
+    return products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(query) ||
+        product.description?.toLowerCase().includes(query)
+    );
+  }, [products, searchQuery]);
+
   return (
     <div className="flex-1">
-      <DashboardHeader />
+      <DashboardHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       
       <main className="p-8 space-y-8">
         <div className="flex items-center justify-between">
@@ -161,9 +174,9 @@ export default function Products() {
               <div key={i} className="h-80 bg-muted animate-pulse rounded-lg" />
             ))}
           </div>
-        ) : products && products.length > 0 ? (
+        ) : filteredProducts && filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 name={product.name}
@@ -177,7 +190,9 @@ export default function Products() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No products yet. Create your first product to get started!</p>
+            <p className="text-muted-foreground text-lg">
+              {searchQuery ? "No products found matching your search." : "No products yet. Create your first product!"}
+            </p>
           </div>
         )}
       </main>
