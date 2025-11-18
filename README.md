@@ -22,3 +22,12 @@ Navigate to any file → Click "Edit" → Commit.
 Go to repo → Code → Codespaces → New Codespace.
 
 -----------------------------------------------------
+
+## 🧩 Tech Stack
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+-----------------------------------------------------
