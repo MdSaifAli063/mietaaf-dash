@@ -15,3 +15,5 @@ $ npm i
 $ npm run dev
 # 3. Edit Directly on GitHub
 Navigate to any file → Click "Edit" → Commit.
+# 4. Use GitHub Codespaces
+Go to repo → Code → Codespaces → New Codespace.
