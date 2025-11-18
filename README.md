@@ -1,2 +1,1 @@
-# Welcome to your Lovable project
-
+# 🚀 Welcome to Your Lovable Project
