@@ -31,3 +31,6 @@ Go to repo → Code → Codespaces → New Codespace.
 - Tailwind CSS
 
 -----------------------------------------------------
+
+## 🌍 Deploy
+Open Lovable → Share → Publish
