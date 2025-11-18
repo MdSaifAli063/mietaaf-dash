@@ -35,8 +35,9 @@ Go to repo → Code → Codespaces → New Codespace.
 ## 🌍 Deploy
 Open Lovable → Share → Publish
 
-
 ## 🔗 Custom Domain
 Lovable → Project Settings → Domains → Connect Domain
 
 -----------------------------------------------------
+
+# ✔ Done!
