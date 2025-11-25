@@ -60,3 +60,10 @@ Open Lovable → Share → Publish
 (Deploys instantly on Lovable Hosting)
 
 -----------------------------------------------------
+
+## 🔗 Connect a Custom Domain
+Project → Settings → Domains → Connect Domain
+
+Full guide: https://docs.lovable.dev/features/custom-domain
+
+-----------------------------------------------------
