@@ -54,3 +54,9 @@ src/
 - 📱 Mobile-friendly design
 
 -----------------------------------------------------
+
+## 🌍 Deploy
+Open Lovable → Share → Publish  
+(Deploys instantly on Lovable Hosting)
+
+-----------------------------------------------------
