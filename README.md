@@ -7,3 +7,6 @@ Description: A modern admin dashboard built using React, Tailwind CSS, shadcn-ui
 -----------------------------------------------------
 
 ## 🛠️ How to Edit This Project
+# 1. Edit on Lovable (Recommended)
+Open the project in Lovable and start prompting.
+All updates are automatically committed to the repository.
