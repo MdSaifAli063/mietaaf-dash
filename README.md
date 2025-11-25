@@ -10,3 +10,8 @@ Description: A modern admin dashboard built using React, Tailwind CSS, shadcn-ui
 # 1. Edit on Lovable (Recommended)
 Open the project in Lovable and start prompting.
 All updates are automatically committed to the repository.
+# 2. Edit Locally (Using Your IDE)
+$ git clone <YOUR_GIT_URL>
+$ cd <YOUR_PROJECT_NAME>
+$ npm i
+$ npm run dev
