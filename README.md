@@ -45,3 +45,10 @@ src/
 -----------------------------------------------------
 
 ## 🚀 Features
+
+- 📊 Responsive dashboard layout  
+- 🎛️ Clean UI with shadcn components  
+- 🌙 Light/Dark mode ready  
+- ⚡ Fast bundling with Vite  
+- 🔧 Easy customization & modular structure  
+- 📱 Mobile-friendly design  
