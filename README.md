@@ -15,3 +15,5 @@ $ git clone <YOUR_GIT_URL>
 $ cd <YOUR_PROJECT_NAME>
 $ npm i
 $ npm run dev
+# 3. Edit Files Directly on GitHub
+Navigate to a file → Click "Edit" (pencil icon) → Commit changes.
