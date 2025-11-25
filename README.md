@@ -51,4 +51,6 @@ src/
 - 🌙 Light/Dark mode ready  
 - ⚡ Fast bundling with Vite  
 - 🔧 Easy customization & modular structure  
-- 📱 Mobile-friendly design  
+- 📱 Mobile-friendly design
+
+-----------------------------------------------------
