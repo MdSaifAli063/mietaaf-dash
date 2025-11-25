@@ -43,3 +43,5 @@ src/
 - 🔒 **TypeScript** — type-safe and scalable  
 
 -----------------------------------------------------
+
+## 🚀 Features
