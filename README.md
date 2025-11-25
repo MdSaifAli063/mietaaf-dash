@@ -35,3 +35,11 @@ src/
 -----------------------------------------------------
 
 ## 🧩 Tech Stack
+
+- ⚡ **Vite** — lightning-fast dev environment  
+- ⚛️ **React** — UI powered by components  
+- 🎨 **Tailwind CSS** — utility-first styling  
+- 🧱 **shadcn-ui** — elegant, reusable UI components  
+- 🔒 **TypeScript** — type-safe and scalable  
+
+-----------------------------------------------------
