@@ -23,3 +23,13 @@ Go to repository → Code → Codespaces → New Codespace → Edit & push.
 -----------------------------------------------------
 
 ## 📂 Project Structure (Quick Overview)
+
+src/
+ ├── components/       → Reusable UI components
+ ├── pages/            → Dashboard pages & routes
+ ├── hooks/            → Custom React hooks
+ ├── utils/            → Helper functions
+ ├── assets/           → Images & icons
+ └── main.tsx          → App entry point
+
+-----------------------------------------------------
