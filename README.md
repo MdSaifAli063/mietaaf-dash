@@ -75,3 +75,9 @@ $ npm run preview
 Output will be created in the /dist folder.
 
 -----------------------------------------------------
+
+## 🧪 Running Linting / Formatting (Optional)
+$ npm run lint
+$ npm run format
+
+-----------------------------------------------------
