@@ -21,3 +21,5 @@ Navigate to a file → Click "Edit" (pencil icon) → Commit changes.
 Go to repository → Code → Codespaces → New Codespace → Edit & push.
 
 -----------------------------------------------------
+
+## 📂 Project Structure (Quick Overview)
