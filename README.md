@@ -1,4 +1,4 @@
-# 🚀 Welcome to Your Lovable Project (Mietaaf-Dashboard)
+# 🚀 Welcome to My Lovable Project (Mietaaf-Dashboard)
 
 ## 📌 Project Info
 URL: https://lovable.dev/projects/930c76cb-58f4-4459-b97c-13e6b37968b5
